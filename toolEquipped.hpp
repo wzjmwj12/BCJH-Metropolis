@@ -24,7 +24,7 @@
 
 void toolEquipped(Chef *chef) {
 
-    return; // 以下为示例代码，可自行修改。完成后注释此行。
+    // return; // 以下为示例代码，可自行修改。完成后注释此行。
 
     ///////////// 不希望任何厨师装备厨具：
 
@@ -34,15 +34,20 @@ void toolEquipped(Chef *chef) {
 
     auto skill = &chef->skill; // 这句不用管，放着就好。
 
-    if (chef->name == "达浪") {              // 金锄头
-        skill->ability.add(30);              // 全技法+30
-        skill->materialBuff.vegetable += 15; // 蔬菜售价+15%
-        chef->tool = NO_TOOL;                // 不允许装备其他厨具
+    if (chef->name == "府先生") {
+        skill->ability.knife += 60; // 切技法+60
+        skill->abilityBuff.steam += 15; // 蒸售价+15%
+        chef->tool = NO_TOOL; // 不允许装备其他厨具
     }
-    if (chef->name == "宋书汐汐") {    // 幸福礼花炮
-        skill->ability.stirfry += 150; // 炒技法+150
-        skill->abilityBuff.bake += 25; // 烤售价+25%
-        chef->tool = NO_TOOL;          // 不允许装备其他厨具
+    if (chef->name == "帝桀") {
+        // skill->ability.stirfry += 150; // 炒技法+150
+        skill->abilityBuff.bake += 30; // 烤售价+30%
+        chef->tool = NO_TOOL; // 不允许装备其他厨具
+    }
+    if (chef->name == "哈妮") {
+        skill->ability.knife += 90; // 切技法+90
+        skill->abilityBuff.steam += 15; // 蒸售价+15%
+        chef->tool = NO_TOOL; // 不允许装备其他厨具
     }
 }
 #endif
